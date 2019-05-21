@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -48,9 +49,18 @@ public class MainActivity extends AppCompatActivity {
                         float bmi=calcbmi(height,weight);
                         String result=resultbmi(bmi);
                         r.setText("BMI =" +bmi + "\n" + result);
+                        closekeyboard();
                     }
                 }
         );
+    }
+    private void closekeyboard() {
+
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
     public float calcbmi(float height, float weight) {
 
