@@ -3,11 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:background="@drawable/ec1f713f49cc6d6556184969ac9d2efd">
 <LinearLayout
 
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -23,8 +24,7 @@
         android:textStyle="bold"
         android:textSize="50sp"
         android:textColor="@android:color/holo_green_light"
-        android:text="BMI"
-         />
+        android:text="BMI" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
