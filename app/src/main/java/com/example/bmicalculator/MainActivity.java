@@ -25,43 +25,50 @@ public class MainActivity extends AppCompatActivity {
         final EditText h = findViewById(R.id.height);
         final EditText w = findViewById(R.id.weight);
         final TextView r = findViewById(R.id.result);
-        Button button = findViewById(R.id.button);
+        final Button button = findViewById(R.id.button);
+        final Button butreset =findViewById(R.id.reset);
 
         button.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        String s1=h.getText().toString();
-                        String s2=w.getText().toString();
+                        String s1 = h.getText().toString();
+                        String s2 = w.getText().toString();
 
-                        if(TextUtils.isEmpty(s1)){
+                        if (TextUtils.isEmpty(s1)) {
                             h.setError("Please Enter The Height");
                             h.requestFocus();
                             return;
                         }
-                        if(TextUtils.isEmpty(s2)){
+                        if (TextUtils.isEmpty(s2)) {
                             w.setError("Please Enter The Weight");
                             w.requestFocus();
                             return;
                         }
-                        float height=Float.parseFloat(s1);
-                        float weight=Float.parseFloat(s2);
-                        float bmi=calcbmi(height,weight);
-                        String result=resultbmi(bmi);
-                        r.setText("BMI =" +bmi + "\n" + result);
-                        closekeyboard();
+                        float height = Float.parseFloat(s1);
+                        float weight = Float.parseFloat(s2);
+                        float bmi = calcbmi(height, weight);
+                        String result = resultbmi(bmi);
+                        r.setText("BMI =" + bmi + "\n" + result);
+                        r.setBackgroundColor(getResources().getColor(android.R.color.holo_green_light));
+                    }
+                }
+        );
+
+        butreset.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        h.setText("");
+                        w.setText("");
+                        r.setText("");
+                        r.setBackgroundColor(getResources().getColor(android.R.color.white));
+
                     }
                 }
         );
     }
-    private void closekeyboard() {
 
-        View view = this.getCurrentFocus();
-        if (view != null) {
-            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-        }
-    }
     public float calcbmi(float height, float weight) {
 
         float bmi;

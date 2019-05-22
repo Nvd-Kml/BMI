@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/ec1f713f49cc6d6556184969ac9d2efd">
+    android:background="@android:color/white">
 <LinearLayout
 
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -13,17 +13,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/ec1f713f49cc6d6556184969ac9d2efd"
+    android:background="@android:color/white"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:textStyle="bold"
         android:textSize="50sp"
-        android:textColor="@android:color/holo_green_light"
+        android:textColor="@android:color/black"
         android:text="BMI" />
     <TextView
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
         android:textSize="25sp"
         android:layout_marginTop="40dp"
         android:textStyle="bold"
-        android:textColor="@android:color/holo_orange_dark"
+        android:textColor="@android:color/holo_blue_dark"
         android:text="HEIGHT(cm)" />
     <EditText
         android:id="@+id/height"
@@ -52,8 +52,8 @@
         android:textStyle="bold"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
-        android:textColor="@android:color/holo_orange_light"
-        android:textColorHint="@android:color/holo_orange_light"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
         android:hint="in cm..." />
     <TextView
         android:layout_width="match_parent"
@@ -62,7 +62,7 @@
         android:textSize="25sp"
         android:layout_marginTop="40dp"
         android:textStyle="bold"
-        android:textColor="@android:color/holo_orange_dark"
+        android:textColor="@android:color/holo_blue_dark"
         android:text="WEIGHT(kg)" />
     <EditText
         android:id="@+id/weight"
@@ -74,8 +74,8 @@
         android:layout_gravity="center"
         android:textStyle="bold"
         android:layout_marginTop="15dp"
-        android:textColor="@android:color/holo_orange_light"
-        android:textColorHint="@android:color/holo_orange_light"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
         android:hint="in kg..." />
     <Button
         android:id="@+id/button"
@@ -92,17 +92,26 @@
         android:text="CALCULATE BMI" />
     <TextView
         android:id="@+id/result"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:includeFontPadding="true"
         android:textColor="#000000"
-        android:background="@android:color/holo_green_light"
         android:layout_marginTop="20dp"
         android:text=""/>
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#000000"
+        android:background="@android:color/holo_orange_dark"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="RESET"/>
 
 </LinearLayout>
 </ScrollView>
